@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dice</title>
+
+    <style>
+        @-webkit-keyframes shaizi{
+            0%{ transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(60px)}
+            100%{ transform:rotateX(360deg) rotateY(360deg) rotateZ(360deg) translateZ(60px)}
+        }
+        #shaizi{ width:120px; height:120px; perspective:1000px; transform-style:preserve-3d; animation:shaizi 5s linear infinite; position:absolute; top:50%; left:50%; margin:-60px 0 0 -60px; }
+        #shaizi > div{ width:100px; height:100px; padding:10px; box-shadow:0 0 3px #848484; background:#fff; position:absolute;}
+        .pip{width:30px; height:30px; background:#3D3D3D; box-shadow: 0 3px 0px #8B8B8B; border-radius:50%;}
+        .first-face{ display:-webkit-flex; justify-content:center; align-items:center;}
+
+        .second-face{ display:-webkit-flex; justify-content:space-between; transform: rotateX(90deg); transform-origin:center bottom;}
+        .second-face .pip:nth-of-type(2){ align-self:flex-end;}
+
+        .third-face{ display:-webkit-flex; justify-content:space-between; transform: rotateY(-90deg); transform-origin:center right;}
+        .third-face .pip:nth-of-type(2){ align-self:center;}
+        .third-face .pip:nth-of-type(3){ align-self:flex-end;}
+
+        .fourth-face{transform: rotateX(-90deg); transform-origin:center top;}
+        .fourth-face, .sixth-face{ display:-webkit-flex; justify-content:space-between;}
+        .fourth-face .column, .sixth-face .column{ display:flex; justify-content:space-between; flex-direction:column;}
+
+        .sixth-face{ transform: translateZ(-120px)}
+
+        .fifth-face{ display:-webkit-flex; justify-content:space-between; transform:rotateY(90deg); transform-origin:center left;}
+        .fifth-face .column{ display:flex; justify-content:space-between; flex-direction:column;}
+        .fifth-face .column:nth-of-type(2){ justify-content:center;}
+    </style>
+</head>
+<body>
+<div id="shaizi">
+    <div class="first-face">
+        <span class="pip"></span>
+    </div>
+    <div class="second-face">
+        <span class="pip"></span>
+        <span class="pip"></span>
+    </div>
+    <div class="third-face">
+        <span class="pip"></span>
+        <span class="pip"></span>
+        <span class="pip"></span>
+    </div>
+    <div class="fourth-face">
+        <div class="column">
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </div>
+        <div class="column">
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </div>
+    </div>
+    <div class="fifth-face">
+        <div class="column">
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </div>
+        <div class="column">
+            <span class="pip"></span>
+        </div>
+        <div class="column">
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </div>
+    </div>
+    <div class="sixth-face">
+        <div class="column">
+            <span class="pip"></span>
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </div>
+        <div class="column">
+            <span class="pip"></span>
+            <span class="pip"></span>
+            <span class="pip"></span>
+        </div>
+    </div>
+</div>
+</body>
+</html>
